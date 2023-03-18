@@ -1,0 +1,20 @@
+<label>server name</label>
+<!-- <input type="text" (input)="updateServername($event)"> -->
+<input type="text" [(ngModel)]="servername">
+<!-- <h6>{{servername}}</h6> -->
+<button class="btn" [disabled]="!addservers" (click)="getServerstatus()">Add Server</button>
+<!-- <p>{{addservers}}</p> interpolation -->
+<!-- <p [innerText]="addservers"></p> property binding-->
+<p>{{servercreationstatus}}</p>
+<br>
+<br>
+<!-- assignment -->
+<label>UserName</label>
+<input type="text" [(ngModel)]="username">
+<p>{{username}}</p>
+<button class="btn" [disabled]="username===''" (click)="onReset()">update user</button>
+<!-- assignment -->
+
+<br>
+<br>
+<hr>

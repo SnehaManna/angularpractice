@@ -1,0 +1,8 @@
+<p>server with ID {{serverId}} is {{getServerStatus()}}</p>
+
+<button (click)="tabClick()">tab1</button>
+
+<p *ngIf="tabcontent; else noServer">lorem ipsum</p>
+<ng-template #noServer>
+<p>error 502</p>
+</ng-template>

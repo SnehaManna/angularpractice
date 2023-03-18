@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-lg-10">
+        <app-shoppingedit></app-shoppingedit>
+        <hr/>
+        <ul>
+            <li  *ngFor="let ingredients of ingredient ">
+                <a routerLink="#">{{ingredients.name}}</a>
+                <span>{{ingredients.amount}}</span>
+            </li >
+        
+        </ul>
+    </div>
+</div>
