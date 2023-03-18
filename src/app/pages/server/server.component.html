@@ -1,8 +1,27 @@
-<p>server with ID {{serverId}} is {{getServerStatus()}}</p>
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ onLine: ServerStatus === 'online' }"
+>
+  server with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
 
 <button (click)="tabClick()">tab1</button>
 
 <p *ngIf="tabcontent; else noServer">lorem ipsum</p>
 <ng-template #noServer>
-<p>error 502</p>
+  <p>error 502</p>
 </ng-template>
+<!-- Assignment -->
+<hr />
+<button (click)="getDisplay()">Display Details</button>
+<p *ngIf="displayText">Secret password = true</p>
+<ul>
+  <li
+    *ngFor="let logitem of log; let i=index"
+    [ngStyle]="{ backgroundColor: logitem <= 5 ? 'blue' : 'transparent' }"
+    [ngClass]="{ logColor: logitem <= 5 }"
+  >
+  {{i}}  {{ logitem }}
+  </li>
+</ul>
+<!-- Assignment -->
