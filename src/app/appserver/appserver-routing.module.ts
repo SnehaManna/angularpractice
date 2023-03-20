@@ -6,7 +6,13 @@ import { AppserverComponent } from './appserver.component'
 const routes: Routes = [
   {
     path: '',
-    component: AppserverComponent,
+    children: [
+      {
+        path: 'appserver',
+        component: AppserverComponent,
+
+      }
+    ]
   }
 ];
 

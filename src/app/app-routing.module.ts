@@ -21,7 +21,7 @@ const routes: Routes = [
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
   {
-    path: 'appserver',
+    path: '',
     loadChildren: () => import('./appserver/appserver.module').then(m => m.AppserverModule)
   },
   {
