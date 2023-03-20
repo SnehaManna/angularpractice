@@ -9,10 +9,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptor } from './interceptor/interceptor';
 import { environment } from '@projectConfig';
 import { FormsModule } from '@angular/forms';
+import { AppServerModule } from './app.server.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+   
  
   ],
   imports: [
