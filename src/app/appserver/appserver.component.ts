@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-appserver',
   templateUrl: './appserver.component.html',
   styleUrls: ['./appserver.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 export class AppserverComponent implements OnInit {
   serverElements: Array<{ type: string; name: string; content: string }> = [];
