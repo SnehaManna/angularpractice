@@ -1,15 +1,28 @@
 <div class="container">
-<app-cockpit (serverCreated)="onServerAdded($event)"  (bpcreated)="onBlueprintAddes($event)"></app-cockpit>
-    <hr>
-    <div class="row">
-        <div class="col-xs-12">
-            <app-serverelement *ngFor="let serverElement of serverElements" [srvElement]="serverElement"></app-serverelement>
-            </div>
-            <div class="col-xs-12">
-                <app-child>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                </app-child>
-            </div>
-            </div>
-
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (bpcreated)="onBlueprintAddes($event)"
+  ></app-cockpit>
+  <hr />
+  <div class="row">
+    <button (click)="onchanges()">Change First Element</button>
+    <button (click)="onDestroy()">Change Destroy Element</button>
+    <div class="col-xs-12">
+      <app-serverelement
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+        [name]="serverElement.name"
+      ></app-serverelement>
+    </div>
+    <div class="col-xs-12">
+      <app-child>
+        <div #contentparagraph>
+             Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s,
+        </div>
+       
+      </app-child>
+    </div>
   </div>
+</div>
