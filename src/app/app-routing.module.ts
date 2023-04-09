@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import('./appserver/appserver.module').then(m => m.AppserverModule)
   },
   {
+    path: '',
+    loadChildren: () => import('./gaming/gaming.module').then(m => m.GamingModule)
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: '/home'
