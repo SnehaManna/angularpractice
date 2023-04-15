@@ -13,6 +13,7 @@ import { ShoppingeditComponent } from './shoppinglist/shoppingedit/shoppingedit.
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { FormsModule } from '@angular/forms';
+import { RecipeItemComponent } from './recipes/recipe-lists/recipe-item/recipe-item.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,8 @@ import { FormsModule } from '@angular/forms';
     ShoppingeditComponent,
     ServerComponent,
     ServersComponent,
-
-    
+    RecipeItemComponent,
   ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule,
-    SharedModule,
-    FormsModule
-  ]
+  imports: [CommonModule, PagesRoutingModule, SharedModule, FormsModule],
 })
-export class PagesModule { }
+export class PagesModule {}

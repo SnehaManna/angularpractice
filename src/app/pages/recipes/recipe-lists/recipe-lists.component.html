@@ -5,11 +5,6 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <a routerLink="#" *ngFor="let recipe of recipes">
-            <h4>{{recipe.name}}</h4>
-            <p>{{recipe.description}}</p>
-            <!-- src={{recipe.imgPath}} -->
-            <img [src]="recipe.imgPath" alt="img" style="max-width:50px"/>
-        </a>
+ <app-recipe-item *ngFor="let recipeEl of recipes" [recipe]="recipeEl" (receipeselected)="onSelectedRecipe(recipeEl)"></app-recipe-item>    
     </div>
 </div>

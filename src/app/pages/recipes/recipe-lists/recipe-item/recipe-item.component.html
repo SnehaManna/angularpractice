@@ -1,0 +1,8 @@
+<div>
+    <a  (click)="onSelected()">
+        <h4>{{recipe?.name}}</h4>
+        <p>{{recipe?.description}}</p>
+        <!-- src={{recipe.imgPath}} -->
+        <img [src]="recipe?.imgPath" alt="img" style="max-width:50px"/>
+    </a>
+</div>
