@@ -14,6 +14,10 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { FormsModule } from '@angular/forms';
 import { RecipeItemComponent } from './recipes/recipe-lists/recipe-item/recipe-item.component';
+import { MainAccountComponent } from './main-account/main-account.component';
+import { AccountComponent } from './main-account/account/account.component';
+import { NewAccountComponent } from './main-account/new-account/new-account.component';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { RecipeItemComponent } from './recipes/recipe-lists/recipe-item/recipe-i
     ServerComponent,
     ServersComponent,
     RecipeItemComponent,
+    MainAccountComponent,
+    AccountComponent,
+    NewAccountComponent,
+   
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule, FormsModule],
 })
