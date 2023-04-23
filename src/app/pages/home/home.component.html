@@ -1,1 +1,10 @@
 <p>home works!</p>
+<button class="btn" (click)="onBtnclick()">Home Btn</button>
+<p class="abc" [class.Box]="isAdult">{{ name }}</p>
+<h5 [style.color]="isAdult? 'green':'blue'">Sneha</h5>
+<img
+  [src]="imgsrc"
+  alt="img"
+/>
+<input [value]="value" (input)="onTyping($event)"/>
+<h1>{{istyping}}</h1>
