@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoggingService {
-loginStatuschange(status:string){
-  console.log('new status'+ status);
+loginStatuschange(status:string,name?:string){
+  console.log('new status'+ status + name);
   
 }
 
