@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
 istyping='';
-
+changeColor='';
+Drop:boolean=false;
+bgColor='no';
   constructor() { }
 
   ngOnInit(): void {
@@ -18,5 +20,14 @@ istyping='';
   onTyping(evt:any){
     console.log(evt);
     this.istyping = evt.target.value;
+  }
+  onColor(e:any){
+this.changeColor = e;
+  }
+  ondrop(){
+this.Drop=!this.Drop;
+  }
+  onBgChange(e:any){
+this.bgColor=e;
   }
 }

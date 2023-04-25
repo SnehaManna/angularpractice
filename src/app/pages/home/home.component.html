@@ -1,14 +1,42 @@
 <div class="home">
-  <input type="text" placeholder="type here" (input)="onTyping($event)"/>
-  <p>{{istyping}}</p>
+  <input type="text" placeholder="type here" (input)="onTyping($event)" />
+  <p
+    [style.color]="
+      changeColor === 'redcolor'
+        ? 'red'
+        : '' || changeColor === 'bluecolor'
+        ? 'blue'
+        : '' || changeColor === 'greencolor'
+        ? 'green'
+        : ''
+    "
+    [class.bgcls]="bgColor==='yes'"
+  >
+    {{ istyping }}
+  </p>
   <div class="btn_area_one">
     <button class="inc_btn">Increase</button>
     <button class="inc_btn">Decrease</button>
   </div>
   <div class="btn_area_color">
-    <button class="color_btn_red">Color Red</button>
-    <button class="color_btn_blue">Color Blue</button>
-    <button class="color_btn_green">Color Green</button>
-    <button class="">Show Background Color</button>
+    <button class="color_btn_red" (click)="onColor('redcolor')">
+      Color Red
+    </button>
+    <button class="color_btn_blue" (click)="onColor('bluecolor')">
+      Color Blue
+    </button>
+    <button class="color_btn_green" (click)="onColor('greencolor')">
+      Color Green
+    </button>
+    <div class="bgBtnarea">
+       <button class="bgbtn" (click)="ondrop()">Show Background Color</button>
+       <div class="dropdown" *ngIf="Drop">
+        <ul>
+          <li (click)="onBgChange('no')">No</li>
+          <li (click)="onBgChange('yes')">Yes</li>
+        </ul>
+       </div>
+    </div>
+   
   </div>
 </div>
