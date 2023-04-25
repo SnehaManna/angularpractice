@@ -1,10 +1,14 @@
-<p>home works!</p>
-<button class="btn" (click)="onBtnclick()">Home Btn</button>
-<p class="abc" [class.Box]="isAdult">{{ name }}</p>
-<h5 [style.color]="isAdult? 'green':'blue'">Sneha</h5>
-<img
-  [src]="imgsrc"
-  alt="img"
-/>
-<input [value]="value" (input)="onTyping($event)"/>
-<h1>{{istyping}}</h1>
+<div class="home">
+  <input type="text" placeholder="type here" (input)="onTyping($event)"/>
+  <p>{{istyping}}</p>
+  <div class="btn_area_one">
+    <button class="inc_btn">Increase</button>
+    <button class="inc_btn">Decrease</button>
+  </div>
+  <div class="btn_area_color">
+    <button class="color_btn_red">Color Red</button>
+    <button class="color_btn_blue">Color Blue</button>
+    <button class="color_btn_green">Color Green</button>
+    <button class="">Show Background Color</button>
+  </div>
+</div>
