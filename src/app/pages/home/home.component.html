@@ -11,12 +11,14 @@
         : ''
     "
     [class.bgcls]="bgColor==='yes'"
+   [style.fontSize]="counter+'px'"
   >
     {{ istyping }}
+  
   </p>
   <div class="btn_area_one">
-    <button class="inc_btn">Increase</button>
-    <button class="inc_btn">Decrease</button>
+    <button class="inc_btn" (click)="increment()">Increase</button>
+    <button class="inc_btn" (click)="decrement()">Decrease</button>
   </div>
   <div class="btn_area_color">
     <button class="color_btn_red" (click)="onColor('redcolor')">

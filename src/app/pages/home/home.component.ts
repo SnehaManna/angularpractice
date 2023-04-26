@@ -11,6 +11,10 @@ istyping='';
 changeColor='';
 Drop:boolean=false;
 bgColor='no';
+counter = 20;
+
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -29,5 +33,12 @@ this.Drop=!this.Drop;
   }
   onBgChange(e:any){
 this.bgColor=e;
+  }
+  increment() {
+   this.counter++;
+ 
+  }
+  decrement(){
+    this.counter--;
   }
 }
