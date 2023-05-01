@@ -14,10 +14,7 @@ export class HomeComponent implements OnInit {
   counter = 20;
   getuser: Array<any>=[];
   constructor(private userinfo: UserdataService) {
-    let userdatainfo = this.userinfo.userdata(
-      'https://reqres.in/api/users?page=2'
-    );
-    userdatainfo.subscribe((res:any) => {
+    this.userinfo.userdata().subscribe((res:any) => {
       this.getuser = res.data;
       console.log('res', res.data);
     });

@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserdataService {
-
+url="https://reqres.in/api/users?page=2"
   constructor(private http:HttpClient) { }
-  userdata(url:string){
-   return this.http.get(url);
+  userdata(){
+   return this.http.get(this.url);
   }
 }

@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthServiceService {
-
+url='https://reqres.in/api/login'
   constructor(private http:HttpClient) { }
-  getLogin(url:string,data:any){
-    return this.http.post(url,data);
+  getLogin(data:any){
+    return this.http.post(this.url,data);
   }
 }

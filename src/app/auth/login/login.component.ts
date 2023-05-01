@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
    
   submit(){
     console.log(this.loginForm.value);
-    this.loginapi.getLogin('https://reqres.in/api/login',this.loginForm.value).subscribe((res:any)=>{
+    this.loginapi.getLogin(this.loginForm.value).subscribe((res:any)=>{
       console.log(res)
     })
 
