@@ -1,44 +1,47 @@
 import { Component, OnInit } from '@angular/core';
+import { UserdataService } from '@project/services/UserData/userdata.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
-istyping='';
-changeColor='';
-Drop:boolean=false;
-bgColor='no';
-counter = 20;
-
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  
+  istyping = '';
+  changeColor = '';
+  Drop: boolean = false;
+  bgColor = 'no';
+  counter = 20;
+  getuser: Array<any>=[];
+  constructor(private userinfo: UserdataService) {
+    let userdatainfo = this.userinfo.userdata(
+      'https://reqres.in/api/users?page=2'
+    );
+    userdatainfo.subscribe((res:any) => {
+      this.getuser = res.data;
+      console.log('res', res.data);
+    });
   }
 
-  onTyping(evt:any){
+  ngOnInit(): void {}
+
+  onTyping(evt: any) {
     console.log(evt);
     this.istyping = evt.target.value;
   }
-  onColor(e:any){
-this.changeColor = e;
+  onColor(e: any) {
+    this.changeColor = e;
   }
-  ondrop(){
-this.Drop=!this.Drop;
+  ondrop() {
+    this.Drop = !this.Drop;
   }
-  onBgChange(e:any){
-this.bgColor=e;
+  onBgChange(e: any) {
+    this.bgColor = e;
   }
   increment() {
-   this.counter++;
- 
+    this.counter++;
   }
-  decrement(){
+  decrement() {
     this.counter--;
   }
 }

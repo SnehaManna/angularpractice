@@ -42,3 +42,11 @@
    
   </div>
 </div>
+
+<hr>
+<ul>
+  <li *ngFor="let item of getuser">
+    <figure><img [src]="item?.avatar" alt=""></figure>
+    <h5>{{item?.first_name}} {{item?.last_name}} </h5>
+  </li>
+</ul>
