@@ -7,6 +7,7 @@ import { ShoppinglistComponent } from './shoppinglist/shoppinglist.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { MainAccountComponent } from './main-account/main-account.component';
+import { Hometask1Component } from './PracticeDada/hometask1/hometask1.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'main-account',
     component: MainAccountComponent,
+  },
+  {
+    path: 'hometas1',
+    component: Hometask1Component,
   },
 ]
   }

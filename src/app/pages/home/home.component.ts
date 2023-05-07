@@ -12,9 +12,11 @@ export class HomeComponent implements OnInit {
   Drop: boolean = false;
   bgColor = 'no';
   counter = 20;
-  getuser: Array<any>=[];
+  getuser: Array<any> = [];
+  aaccArrays: Array<number> = [-3, 2, 5];
+  aaccArraysTwo: number[] = [];
   constructor(private userinfo: UserdataService) {
-    this.userinfo.userdata().subscribe((res:any) => {
+    this.userinfo.userdata().subscribe((res: any) => {
       this.getuser = res.data;
       console.log('res', res.data);
     });
@@ -40,5 +42,13 @@ export class HomeComponent implements OnInit {
   }
   decrement() {
     this.counter--;
+  }
+  Onasccending() {
+    for (var i = 0; i < this.aaccArrays.length; i++) {
+   this.aaccArraysTwo.push (this.aaccArrays[i] * this.aaccArrays[i]);
+     
+    }
+    let sorting=this.aaccArraysTwo.sort(function(a,b){ return a - b})
+    console.log(sorting, 'hi');
   }
 }

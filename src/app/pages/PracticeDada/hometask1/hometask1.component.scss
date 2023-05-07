@@ -1,0 +1,25 @@
+.list_item{
+    ul{
+        li{
+            margin-bottom: 15px;
+            .list_cls{
+                      display: flex;
+           
+            }
+      
+            h2{
+                margin-right: 12px;
+                width: 100%;
+                max-width: 100px;
+            }
+            .list_detail{
+                h5{
+                    font-size: 20px;
+                }
+                input{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

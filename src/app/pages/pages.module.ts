@@ -17,6 +17,7 @@ import { RecipeItemComponent } from './recipes/recipe-lists/recipe-item/recipe-i
 import { MainAccountComponent } from './main-account/main-account.component';
 import { AccountComponent } from './main-account/account/account.component';
 import { NewAccountComponent } from './main-account/new-account/new-account.component';
+import { Hometask1Component } from './PracticeDada/hometask1/hometask1.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { NewAccountComponent } from './main-account/new-account/new-account.comp
     MainAccountComponent,
     AccountComponent,
     NewAccountComponent,
+    Hometask1Component,
    
   ],
   imports: [CommonModule, PagesRoutingModule, SharedModule, FormsModule],

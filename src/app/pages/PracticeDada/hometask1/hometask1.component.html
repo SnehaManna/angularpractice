@@ -1,0 +1,20 @@
+<div class="list_item">
+  <ul>
+    <li *ngFor="let item of listArray; let i = index">
+      <div class="list_cls">
+        <h2>{{ item?.name }}</h2>
+        <button class="show_btn" (click)="OnShow(i)">Show More</button>
+      </div>
+
+      <div class="list_detail" *ngIf="listShow === i">
+        <h5>Details</h5>
+
+        <p>Name:</p>
+        <input value="{{ item.name }}"  [(ngModel)]="valueName" />
+        <p>Email:</p>
+        <input value="{{ item.email }}" [(ngModel)]="valueEmail" />
+        <button (click)="OnUpdate(i)">Update</button>
+      </div>
+    </li>
+  </ul>
+</div>
