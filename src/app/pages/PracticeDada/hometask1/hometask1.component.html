@@ -3,17 +3,20 @@
     <li *ngFor="let item of listArray; let i = index">
       <div class="list_cls">
         <h2>{{ item?.name }}</h2>
-        <button class="show_btn" (click)="OnShow(i)">Show More</button>
+        <button class="show_btn" (click)="OnShow(i,item)">Show More</button>
       </div>
 
       <div class="list_detail" *ngIf="listShow === i">
         <h5>Details</h5>
 
         <p>Name:</p>
-        <input value="{{ item.name }}"  [(ngModel)]="valueName" />
+        <input [disabled]="isdisable===i?false:true" [value]="selectedUser.name" name="name" (input)="setUser($event)" />
         <p>Email:</p>
-        <input value="{{ item.email }}" [(ngModel)]="valueEmail" />
+        <input [disabled]="isdisable===i?false:true"  [value]="selectedUser.email" name="email" (input)="setUser($event)" />
+        <p>Skills:</p>
+        <input [disabled]="isdisable===i?false:true"  [value]="selectedUser.skills" name="skills" (input)="setUser($event)" />
         <button (click)="OnUpdate(i)">Update</button>
+        <button (click)="OnEdit(i)">Edit</button>
       </div>
     </li>
   </ul>

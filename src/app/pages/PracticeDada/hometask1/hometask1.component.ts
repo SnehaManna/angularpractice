@@ -6,41 +6,56 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hometask1.component.scss'],
 })
 export class Hometask1Component implements OnInit {
-  listArray: Array<{ id: number; name: string; email: string }> = [
+  listArray: Array<{
+    id: number;
+    name: string;
+    email: string;
+    skills: string;
+  }> = [
     {
       id: 0,
       name: 'sneha',
       email: 'snehamanna62@gmail.com',
+      skills: 'dance',
     },
     {
       id: 1,
       name: 'Max',
       email: 'max@gmail.com',
+      skills: 'poem',
     },
     {
       id: 2,
       name: 'John',
       email: 'john@gmail.com',
+      skills: 'song',
     },
   ];
-  listShow = null;
-
-
-  valueName: any ='' ;
-  valueEmail = '';
+  listShow = -1;
+  selectedUser: any;
+  isdisable = -1;
   constructor() {}
 
   ngOnInit(): void {
     console.log(this.listArray);
   }
-  OnShow(i: any=0) {
-    console.log(i);
+  OnShow(i: any = 0, user: any) {
+    this.selectedUser = { ...user };
+    console.log(this.selectedUser);
     this.listShow = i;
   }
-  OnUpdate(i: any=0) {
-   let upd_obj = this.listArray.findIndex((obj) => obj.id ===i);
-    this.listArray[upd_obj].name = this.valueName;
-    this.listArray[upd_obj].email = this.valueEmail;
+  OnUpdate(i: any = 0) {
+    this.listArray[i] = this.selectedUser;
     console.log(this.listArray);
+    this.listShow = -1;
+    this.isdisable = 1;
+  }
+  setUser(e: any) {
+    console.log(e);
+    let { name, value } = e.target;
+    this.selectedUser[name] = value;
+  }
+  OnEdit(i: any = 0) {
+    this.isdisable = i;
   }
 }
