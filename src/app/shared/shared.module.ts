@@ -5,6 +5,8 @@ import { MaterialModule } from '@project/material.module';
 import { BasicHighlightDirective } from './basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight.directive';
 import { DropdownDirective } from './dropdown.directive';
+import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -14,9 +16,13 @@ import { DropdownDirective } from './dropdown.directive';
     BasicHighlightDirective,
     BetterHighlightDirective,
     DropdownDirective,
+    FooterComponent,
+    SidebarComponent,
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,

@@ -20,6 +20,7 @@ import { NewAccountComponent } from './main-account/new-account/new-account.comp
 import { Hometask1Component } from './PracticeDada/hometask1/hometask1.component';
 
 
+
 @NgModule({
   declarations: [
     PagesComponent,

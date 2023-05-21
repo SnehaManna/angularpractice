@@ -9,6 +9,7 @@ import { ServersComponent } from './servers/servers.component';
 import { MainAccountComponent } from './main-account/main-account.component';
 import { Hometask1Component } from './PracticeDada/hometask1/hometask1.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -42,6 +43,7 @@ const routes: Routes = [
     path: 'hometas1',
     component: Hometask1Component,
   },
+ 
 ]
   }
 ];
