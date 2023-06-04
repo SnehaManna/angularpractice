@@ -9,7 +9,7 @@ import { AuthServiceService } from '@project/services/auth-service/auth-service.
 })
 export class LoginComponent implements OnInit {
   loginForm!:FormGroup ;
-
+errorEmailtxt:string="";
   constructor(private loginapi:AuthServiceService) { }
 
   ngOnInit(): void {
@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
   }
   get emailError(){
     return this.loginForm.get('email');
+   
   }
+
   get passwordError(){
     return this.loginForm.get('password');
   }

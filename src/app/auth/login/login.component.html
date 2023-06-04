@@ -1,6 +1,6 @@
 <p>login works!</p>
 <form [formGroup]="loginForm">
-    <input class="" type="email" placeholder="Enter Email" name="email" formControlName="email"/>
+    <input class="" type="email" placeholder="Enter Email" name="email" formControlName="email" [class.error]="emailError?.invalid && emailError?.touched"/>
     <br>
     <span style='color:red' *ngIf="emailError && emailError.invalid && emailError.touched">Please Enter a valid Email</span>
     <br>
