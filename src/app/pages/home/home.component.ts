@@ -22,7 +22,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
 
   onTyping(evt: any) {
     console.log(evt);
