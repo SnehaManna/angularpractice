@@ -10,15 +10,11 @@ import { LoaderInterceptor } from './interceptor/interceptor';
 import { environment } from '@projectConfig';
 import { FormsModule } from '@angular/forms';
 import { AppServerModule } from './app.server.module';
-
-
+import { HeaderInterceptor } from './header.interceptor';
+import { LoggingInterceptor } from './logging.interceptor';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  
- 
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -27,12 +23,16 @@ import { AppServerModule } from './app.server.module';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
