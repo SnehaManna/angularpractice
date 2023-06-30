@@ -9,6 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class GamingComponent implements OnInit {
 oddNumbers:Array<number>=[];
 evenNumbers:Array<number>=[];
+dob:number=10
   constructor() { }
 
   ngOnInit(): void {

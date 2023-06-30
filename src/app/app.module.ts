@@ -12,9 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { AppServerModule } from './app.server.module';
 import { HeaderInterceptor } from './header.interceptor';
 import { LoggingInterceptor } from './logging.interceptor';
+import { AgePipe } from './age.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AgePipe],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
