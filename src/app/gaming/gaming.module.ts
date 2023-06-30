@@ -15,6 +15,7 @@ import { AgePipe } from '@project/age.pipe';
     OddComponent,
     EvenComponent,
     GameControlComponent,
+   
   ],
   imports: [
     CommonModule,
