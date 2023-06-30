@@ -15,7 +15,7 @@ import { LoggingInterceptor } from './logging.interceptor';
 import { AgePipe } from './age.pipe';
 
 @NgModule({
-  declarations: [AppComponent, AgePipe],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,

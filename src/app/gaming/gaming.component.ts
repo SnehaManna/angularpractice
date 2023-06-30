@@ -9,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class GamingComponent implements OnInit {
 oddNumbers:Array<number>=[];
 evenNumbers:Array<number>=[];
-dob:string="10/02/21"
+dob:any=new Date('10/05/1996')
 
   constructor() { }
 

@@ -5,8 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AgePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any, ...args: unknown[]): unknown {
+    let currentYear:any=new Date().getFullYear();
+    let userYear:any=new Date(value).getFullYear();
+    let ageval= currentYear - userYear;
+    return ageval;
   }
 
 }
