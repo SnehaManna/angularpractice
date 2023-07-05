@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
+user:Array<{id:number,name:string}>=[{id:1,name:"Max"},{id:2,name:"John"},{id:3,name:"Charley"}]
+
+
   constructor() { }
 
   ngOnInit(): void {
