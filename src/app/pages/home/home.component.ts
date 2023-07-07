@@ -22,9 +22,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   onTyping(evt: any) {
     console.log(evt);
@@ -47,10 +45,11 @@ export class HomeComponent implements OnInit {
   }
   Onasccending() {
     for (var i = 0; i < this.aaccArrays.length; i++) {
-   this.aaccArraysTwo.push (this.aaccArrays[i] * this.aaccArrays[i]);
-     
+      this.aaccArraysTwo.push(this.aaccArrays[i] * this.aaccArrays[i]);
     }
-    let sorting=this.aaccArraysTwo.sort(function(a,b){ return a - b})
+    let sorting = this.aaccArraysTwo.sort(function (a, b) {
+      return a - b;
+    });
     console.log(sorting, 'hi');
   }
 }
