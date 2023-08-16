@@ -10,4 +10,7 @@ url='https://reqres.in/api/login'
   getLogin(data:any){
     return this.http.post(this.url,data);
   }
+  isloggedin(){
+    return false
+  }
 }

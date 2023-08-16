@@ -10,6 +10,8 @@ import { LoaderInterceptor } from './interceptor/interceptor';
 import { environment } from '@projectConfig';
 import { FormsModule } from '@angular/forms';
 import { AppServerModule } from './app.server.module';
+import { AdminGuard } from './guard/admin.guard';
+import { SavedataGuard } from './guard/savedata.guard';
 
 
 
@@ -32,7 +34,7 @@ import { AppServerModule } from './app.server.module';
     FormsModule,
     HttpClientModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, },AdminGuard,SavedataGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

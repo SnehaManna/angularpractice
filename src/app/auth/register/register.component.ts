@@ -49,12 +49,12 @@ export class RegisterComponent implements OnInit {
       });
   }
 
-  onSubmit() {
+  onSubmit(e) {
     this.submit = true;
 
     if (this.registerform.valid) {
   localStorage.setItem("keyName", JSON.stringify(this.registerform.value));
-     console.log(this.registerform.value)
+     console.log(this.registerform.value) ;
     }
   }
 }

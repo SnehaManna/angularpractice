@@ -8,6 +8,7 @@ import { EvenComponent } from './even/even.component';
 import { GameControlComponent } from './game-control/game-control.component';
 
 
+
 @NgModule({
   declarations: [
     GamingComponent,
@@ -17,7 +18,8 @@ import { GameControlComponent } from './game-control/game-control.component';
   ],
   imports: [
     CommonModule,
-    GamingRoutingModule
+    GamingRoutingModule,
+    
   ]
 })
 export class GamingModule { }

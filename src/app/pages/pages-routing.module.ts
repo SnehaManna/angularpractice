@@ -8,6 +8,7 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { MainAccountComponent } from './main-account/main-account.component';
 import { Hometask1Component } from './PracticeDada/hometask1/hometask1.component';
+import { AuthGuard } from '@project/auth.guard';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {
     path: 'recipe',
     component: RecipesComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'shopping-list',

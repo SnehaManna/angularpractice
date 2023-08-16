@@ -17,16 +17,19 @@ errorEmailtxt:string="";
       email:new FormControl('',[Validators.required, Validators.email]),
       password:new FormControl('',[Validators.required, Validators.minLength(5)]),
     })
-  
+
     
   }
    
   submit(){
     console.log(this.loginForm.value);
-    this.loginapi.getLogin(this.loginForm.value).subscribe((res:any)=>{
+    if(this.loginForm.valid){
+        this.loginapi.getLogin(this.loginForm.value).subscribe((res:any)=>{
       console.log(res)
     })
+    }
 
+    
   }
   get emailError(){
     return this.loginForm.get('email');

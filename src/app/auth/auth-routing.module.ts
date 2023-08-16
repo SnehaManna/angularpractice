@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { SavedataGuard } from '@project/guard/savedata.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +18,12 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
-      }
+      },
+      {
+        path: 'add-user',
+        component: AddUserComponent,
+        canDeactivate:[SavedataGuard]
+      },
     ]
   }
 ];
