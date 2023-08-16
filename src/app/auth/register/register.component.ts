@@ -53,8 +53,8 @@ export class RegisterComponent implements OnInit {
     this.submit = true;
 
     if (this.registerform.valid) {
-  localStorage.setItem("keyName", JSON.stringify(this.registerform.value));
-     console.log(this.registerform.value) ;
+      localStorage.setItem('keyName', JSON.stringify(this.registerform.value));
+      console.log(this.registerform.value);
     }
   }
 }

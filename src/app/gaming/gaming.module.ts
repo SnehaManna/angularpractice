@@ -6,6 +6,7 @@ import { GamingComponent } from './gaming.component';
 import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
 import { GameControlComponent } from './game-control/game-control.component';
+import { AgePipe } from '@project/age.pipe';
 
 
 
@@ -14,7 +15,9 @@ import { GameControlComponent } from './game-control/game-control.component';
     GamingComponent,
     OddComponent,
     EvenComponent,
-    GameControlComponent
+    GameControlComponent,
+    AgePipe
+   
   ],
   imports: [
     CommonModule,

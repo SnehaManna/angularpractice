@@ -14,13 +14,12 @@ import { AdminGuard } from './guard/admin.guard';
 import { SavedataGuard } from './guard/savedata.guard';
 
 
+import { HeaderInterceptor } from './header.interceptor';
+import { LoggingInterceptor } from './logging.interceptor';
+import { AgePipe } from './age.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  
- 
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -29,12 +28,17 @@ import { SavedataGuard } from './guard/savedata.guard';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, },AdminGuard,SavedataGuard],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
+    AdminGuard,SavedataGuard
+  ],
+   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
